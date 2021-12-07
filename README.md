@@ -9,8 +9,9 @@ Tested on English and Spanish Linkedin, Windows 10.
 It's currently under development, if you encounter any issues please let me know using the Issues tab.
 
 
+
 **Features**:
-- Filter by job name and location
+- Filter by job name, location and experience
 - Settings are automatically saved to a config file
 - SMS & Bot verification supported
 
@@ -25,6 +26,14 @@ It's currently under development, if you encounter any issues please let me know
 - Click on next jobs page
 - Select custom curriculum
 - Add support for more job filters, such as remote work 
+- Invisible browser
+
+
+
+**Instructions**:
+
+The first time you run the program a setup is required. You must enter the account credentials and specify the job search filters. Once Linkedin loads, it will automatically type the locations you've introduced in the search bar and then wait for a location to be clicked by the user, once you've been redirected you can press enter and the program will save it automatically.
+
 
 
 **Images**:
