@@ -1,4 +1,19 @@
-### Linkedin auto apply for jobs bot (Under development)
+### Linkedin auto apply for jobs bot
+
+This script automatically applies for any available Linkedin jobs.
+
+Some require extra questions in order to apply, such as why do you wanna join their company. These will be skipped since creating an answer for every question would be impossible/a big headache (unless gpt-3?).
+
+Tested on English and Spanish Linkedin, Windows 10.
+
+This bot is currently under development, if you encounter any issues please report them using the Issues tab.
+
+
+Features:
+- Filter by job name and location
+- Settings are automatically saved to a config file
+- SMS & Bot verification supported
+
 Requirements:
 - pip3 install -r requirements.txt
 - Chrome
@@ -7,6 +22,7 @@ Requirements:
 TODO: 
 - Click on next jobs page
 - Select custom curriculum
+- Add support for more job filters, such as remote work 
 
 Images:
 
