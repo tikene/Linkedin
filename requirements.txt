@@ -1,0 +1,4 @@
+colorama==0.4.3
+pwinput==1.0.2
+selenium==3.141.0
+webdriver_manager==2.3.0
