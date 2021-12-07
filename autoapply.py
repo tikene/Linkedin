@@ -45,6 +45,7 @@ class AutoApplier:
                  password,
                  loc_list,
                  experience,
+                 keywords,
                  is_silent
                  ):
 
@@ -52,6 +53,7 @@ class AutoApplier:
         self.password = password
         self.loc_list = loc_list
         self.experience = experience
+        self.keywords = keywords
         self.is_silent = is_silent
 
     def create_session(self):
@@ -206,7 +208,7 @@ class AutoApplier:
         
         # Job position name
         job_name_field = driver.find_elements_by_class_name("jobs-search-box__text-input.jobs-search-box__keyboard-text-input")[0]
-        self.fill_field(job_name_field, "ciberseguridad")
+        self.fill_field(job_name_field, self.keywords)
         job_name_field.send_keys(Keys.ENTER)
         sleep(3)
         
@@ -232,8 +234,7 @@ class AutoApplier:
         
         login_success = self.do_login()
         if login_success:
-            #print("\n{}Successfully logged in as {}".format(green, self.username))
-            print("\n{}Successfully logged in as test@test.test".format(green, self.username))
+            print("\n{}Successfully logged in as {}".format(green, self.username))
         else:
             print("\n{}Couldn't log in as {}".format(red, self.username))
             raise ValueError('Error logging in')
@@ -368,11 +369,14 @@ if __name__ == '__main__':
                 
                 conf_experience[list(conf_experience)[exp_lvl - 1]] = not conf_experience[list(conf_experience)[exp_lvl - 1]]
                 
+        conf_keywords = input("> Name of the job: ")
+                
         # Save to file
         to_save = {
             "username": conf_username,
             "password": conf_password,
             "locations": conf_locations,
+            "keywords": conf_keywords,
             "experience": conf_experience
         }
 
@@ -384,11 +388,15 @@ if __name__ == '__main__':
             conf_username = data["username"]
             conf_password = data["password"]
             conf_locations = data["locations"]
+            conf_keywords = data["keywords"]
             conf_experience = data["experience"]
     sleep(2)
     
+    
+
+    
     cls()
     print("{}\n\nLinkedin bot loaded! Running...\n".format(cyan))
-    autoapply = AutoApplier(conf_username, conf_password, conf_locations, conf_experience, False)
+    autoapply = AutoApplier(conf_username, conf_password, conf_locations, conf_experience, conf_keywords, False)
     driver = autoapply.create_session()
     result = autoapply.start_apply()
