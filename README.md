@@ -1,4 +1,4 @@
-### Linkedin auto apply for jobs bot
+### Linkedin AutoApplier
 
 This script automatically applies for any available Linkedin jobs.
 
